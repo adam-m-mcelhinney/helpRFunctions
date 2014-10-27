@@ -1,0 +1,13 @@
+Package: helpRFunctions
+Title: Provides a set of helper functions for many common tasks to enable
+    faster, cleaner programming.
+Version: 0.1
+Authors@R: person("Adam", "McElhinney", role = c("aut", "cre"), email =
+    "adam.m.mcelhinney@gmail.com")
+Description: Provides a set of helper functions for many common tasks to enable
+    faster, cleaner programming. More documentation to come as the project
+    evolves.
+Depends:
+    R (>= 3.0.2)
+License: 
+LazyData: true
