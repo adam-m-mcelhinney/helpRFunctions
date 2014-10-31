@@ -4,7 +4,7 @@
 \title{Removes highly correlated variables from your data frame. Ignores factor variables.}
 \usage{
 rmv.highly.correlated(df, verbose = FALSE, cutoff = 0.75,
-  use = "pairwise.complete.obs")
+  use = "pairwise.complete.obs", print.removed.cols = TRUE)
 }
 \arguments{
 \item{df}{The incoming data frame}
@@ -14,6 +14,8 @@ rmv.highly.correlated(df, verbose = FALSE, cutoff = 0.75,
 \item{cutoff}{Optional. Defaults to .75. Is the cutoff argument for the \href{http://cran.r-project.org/web/packages/caret/caret.pdf}{findCorrelation} function in caret.}
 
 \item{use}{Optional. Defaults to pairwise.complete.obs. Is the use argument for the cor function.}
+
+\item{print.removed.cols}{Optional. Defaults to TRUE. If TRUE, prints the names of the columns removed.}
 }
 \value{
 A new data frame with the highly correlated variables removed.
@@ -30,6 +32,7 @@ for (k in 1:10) {
  df[i, j] <- NA
 }
 df <- cbind(df, rep("A", nrow(df)))
+df <- cbind(df, df[,1]) # TODO: This fails for this case! Name is null.
 rmv.highly.correlated(df)
 }
 
