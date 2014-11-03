@@ -23,7 +23,9 @@ rmv.highly.correlated <- function(df, verbose = FALSE, cutoff = .75, use = "pair
     if(!is.data.frame(df)) stop('Must provide data frame')
     varList <- list.df.var.types(df)
     # TODO: Ensure all the possible data types that cor function accepts are here
-    if(is.null(varList$numeric) && is.null(varList$integer) && is.null(varList$double)) stop("Data frame contains no numeric variables.")
+    if(is.null(varList$numeric) && is.null(varList$integer) 
+			&& is.null(varList$double)) 
+		stop("Data frame contains no numeric variables.")
     numeric.df <- df[,varList$numeric] # TODO: Fix this for the case of integers and doubles
     cor.matrix <- cor(numeric.df, use = use)
     highlyCorDescr <- findCorrelation(cor.matrix, cutoff = cutoff, verbose = verbose)
