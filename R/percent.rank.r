@@ -10,7 +10,7 @@
 #' percent.rank(y)
 #' 
 #' x <- c("A", 1, 2, 3, 4, NA)
-#' percent.rank(x) # Throws error
+#' #percent.rank(x) # Throws error
 #' 
 
 percent.rank<-function(x){

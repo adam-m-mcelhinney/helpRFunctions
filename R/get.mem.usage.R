@@ -17,6 +17,9 @@ get.mem.usage <- function(sort = 'name', min.display.value = NA) {
 	}
 	t = sapply(ls(globalenv()),function(x){object.size(get(x))})
 	
+	# Check for empty list
+	if(length(t) == 0) return(t)
+	
 	# Filter out results below the minimum display value
 	if(!is.na(min.display.value)){
 		t = t[t>=min.display.value]

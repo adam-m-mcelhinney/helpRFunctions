@@ -19,7 +19,9 @@
 #'df <- cbind(df, df[,1]) # TODO: This fails for this case! Name is null.
 #'rmv.highly.correlated(df)
 
+
 rmv.highly.correlated <- function(df, verbose = FALSE, cutoff = .75, use = "pairwise.complete.obs", print.removed.cols = TRUE) {
+	require(caret)
     if(!is.data.frame(df)) stop('Must provide data frame')
     varList <- list.df.var.types(df)
     # TODO: Ensure all the possible data types that cor function accepts are here

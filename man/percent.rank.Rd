@@ -23,6 +23,6 @@ y <- c(13, 12, 11, 8, 4, 3, 2, 1, 1, 1, NA)
 percent.rank(y)
 
 x <- c("A", 1, 2, 3, 4, NA)
-percent.rank(x) # Throws error
+#percent.rank(x) # Throws error
 }
 

@@ -17,7 +17,7 @@ Provides a list containing the data.frame columns that are of a given type. This
 \examples{
 df <- data.frame(matrix(rnorm(100), nrow = 10))
 df <- cbind(df, rep("A", nrow(df)))
-cor(df) # This will return an error because the last column is not numeric.
+#cor(df) # This will return an error because the last column is not numeric.
 varList <- list.df.var.types(df)
 cor(df[,varList$numeric]) # No longer returns an error. Ignores the non-numeric columns.
 }
