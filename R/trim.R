@@ -10,7 +10,7 @@
 #'trim(x)
 #'trim(x, 'leading')
 #'trim(x, 'trailing')
-#'trim(x, 'other') # throws error
+#'#trim(x, 'other') # throws error
 
 trim <- function(x, white.space = 'both'){
 	if(!(white.space  %in% c('leading', 'trailing', 'both'))) {

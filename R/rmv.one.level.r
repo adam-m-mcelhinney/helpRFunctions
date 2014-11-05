@@ -1,5 +1,5 @@
 #' Removes variables that only contain one level, not counting NA.
-#' 
+#' #TODO: Figure out what happens if a column is all NAs and remove it
 #' 
 #' @param df The data.frame you wish to have a list of the types for.
 #' @param print.removed.cols Optional, defaults to TRUE. If TRUE, prints the column names of the deleted columns.

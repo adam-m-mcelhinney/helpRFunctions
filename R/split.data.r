@@ -1,7 +1,7 @@
 #' Divides the data into training and testing sets, with a specified percentage. 
 #' TODO: Extend this function to split into any number of groups with specified percentages in each group
 #' TODO: Extend this function to work for matrices as well
-#' 
+#' TODO: Add functionality to specify the random seed.
 #' @param y The column name of target variable, or variable of interest.
 #' @param df The data frame to split
 #' @param p Percent to put into the training data set. Optional, defaults to .7.
