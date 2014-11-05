@@ -10,7 +10,7 @@
 #' df[1,1] <- NA
 #' gen.interaction(df)
 #' gen.interaction(df, interaction.vars = c("X1", "X2"))
-
+#' gen.interaction(df, interaction.vars = c("X1", "X2"), return.all = TRUE)
 
 gen.interaction <- function(df, interaction.vars = names(df), return.all = FALSE) {
 	
