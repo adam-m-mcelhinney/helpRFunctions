@@ -3,7 +3,8 @@
 \alias{split.data}
 \title{Divides the data into training and testing sets, with a specified percentage.
 TODO: Extend this function to split into any number of groups with specified percentages in each group
-TODO: Extend this function to work for matrices as well}
+TODO: Extend this function to work for matrices as well
+TODO: Add functionality to specify the random seed.}
 \usage{
 \method{split}{data}(y, df, p = 0.7)
 }
@@ -21,6 +22,7 @@ A list containing data frames with training as the first element and the testing
 Divides the data into training and testing sets, with a specified percentage.
 TODO: Extend this function to split into any number of groups with specified percentages in each group
 TODO: Extend this function to work for matrices as well
+TODO: Add functionality to specify the random seed.
 }
 \examples{
 df <- data.frame(matrix(rnorm(100), nrow = 10))

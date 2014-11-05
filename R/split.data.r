@@ -18,8 +18,8 @@ split.data <- function(y, df, p = .7){
   if(!is.data.frame(df)) stop('Must provide data frame')
   y = df[,y]
   part <- createDataPartition(y = y, p = p, list = FALSE)
-  training <- data[part,]
-  testing <- data[-part,]
+  training <- df[part,]
+  testing <- df[-part,]
   return (list(training, testing))
 }
 

@@ -23,6 +23,6 @@ x <-c(' leading whitespace', 'trailing whitespace ', ' both leading and trailing
 trim(x)
 trim(x, 'leading')
 trim(x, 'trailing')
-trim(x, 'other') # throws error
+#trim(x, 'other') # throws error
 }
 
