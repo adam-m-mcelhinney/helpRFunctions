@@ -14,5 +14,9 @@
 	<natures>
 		<nature>de.walware.statet.base.StatetNature</nature>
 		<nature>de.walware.statet.r.RNature</nature>
+<<<<<<< HEAD
+=======
+		<nature>de.walware.statet.r.RPkgNature</nature>
+>>>>>>> dev
 	</natures>
 </projectDescription>
