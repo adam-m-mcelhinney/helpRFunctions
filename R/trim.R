@@ -1,7 +1,7 @@
 #' Trims whitespace from each element in a chacter vector.
 #' Adapted from this post on \href{http://stackoverflow.com/questions/2261079/how-to-trim-leading-and-trailing-whitespace-in-r}{StackOverflow}
 #' 
-#' @param x A character vector containing the 
+#' @param x A vector containing the strings to from which to remove white space. 
 #' @param white.space Optional. Acceptable values are "leading", "trailing", or "both". Defaults to both. Do you want to trim the "leading" white space, the "trailing" white space, or "both" the leading and trailing white space.
 #' @return A vector containing the bucketized values.
 #' @examples 
