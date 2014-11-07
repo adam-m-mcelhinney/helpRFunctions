@@ -7,8 +7,9 @@ Authors@R: person("Adam", "McElhinney", role = c("aut", "cre"), email =
 Description: Provides a set of helper functions for many common tasks to enable
     faster, cleaner programming. More documentation to come as the project
     evolves.
-Depends:
+Depends: 
     R (>= 3.0.2),
     caret (>= 6.0)
 License: MIT
 LazyData: true
+Suggests: testthat

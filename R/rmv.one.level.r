@@ -1,5 +1,5 @@
-#' Removes variables that only contain one level, not counting NA.
-#' #TODO: Figure out what happens if a column is all NAs and remove it
+#' Removes variables that only contain one level.
+#' Columns cotaning all NA's will also be removed.
 #' 
 #' @param df The data.frame you wish to have a list of the types for.
 #' @param print.removed.cols Optional, defaults to TRUE. If TRUE, prints the column names of the deleted columns.
@@ -13,6 +13,7 @@
 #'}
 #'df <- cbind(df, rep("A", nrow(df)))
 #'df <- cbind(df, df[,1])
+#'df <- cbind(df, rep(NA, nrow(df)))
 #'rmv.one.level(df)
 
 # Vars with only one level, not including NA
