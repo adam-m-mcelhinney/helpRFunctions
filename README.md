@@ -1,6 +1,9 @@
-helpRFunctions
+#helpRFunctions
 
-Provides a set of helper functions for many common tasks to enable
-faster, cleaner R programming.
+## Objective: To provide a set of standardized helper functions to enable faster, cleaner and more modular R programming.
 
-Currently under construction.
+## Installation
+This package may be installed using [devtools](http://cran.r-project.org/web/packages/devtools/index.html). 
+`install_github('helpRFunctions', username = 'adam-m-mcelhinney')`
+
+
