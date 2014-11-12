@@ -1,26 +1,47 @@
-#' Divides the data into training and testing sets, with a specified percentage. 
-#' TODO: Extend this function to split into any number of groups with specified percentages in each group
-#' TODO: Extend this function to work for matrices as well
-#' TODO: Add functionality to specify the random seed.
-#' TODO: Change the output to be a list with named elemements.
-#' @param y The column name of target variable, or variable of interest.
+#' Divides the data into any specified number of buckets with specified names. 
+
 #' @param df The data frame to split
-#' @param p Percent to put into the training data set. Optional, defaults to .7.
-#' @return A list containing data frames with training as the first element and the testing as the second
+#' @param pcts Optional. The percentage of observations to put into each bucket. Extra observations due to rounding are placed in the last bucket.
+#' @param set.names Optional. What to name the resulting data sets. This must be the same length as the pcts vector.
+#' @param seed Optional. Define a seed to use for sampling. Defaults to NULL which is just the normal random number generator in R. 
+#' @return A list containing data frames named according to the set.names argument.
 #' @examples 
-#' df <- data.frame(matrix(rnorm(100), nrow = 10))
-#' t <- split.data(y = 'X1', df = df, p = .7)
-#' training <- t[[1]]
-#' testing <- t[[2]]
+#' df <- data.frame(matrix(rnorm(110), nrow = 11))
+#' t <- split.data(df)
+#' training <- t$training
+#' testing <- t$testing
 #' 
 
 
-split.data <- function(y, df, p = .7){
-  if(!is.data.frame(df)) stop('Must provide data frame')
-  y = df[,y]
-  part <- createDataPartition(y = y, p = p, list = FALSE)
-  training <- df[part,]
-  testing <- df[-part,]
-  return (list(training, testing))
-}
 
+split.data <- function(  df
+                        , pcts = c(.6, .3, .1)
+                        , set.names = c('training', 'testing', 'validation')
+                        , seed = NULL
+                        ){
+  if(!is.data.frame(df)) stop('Must provide data frame')
+  if(sum(pcts) != 1) stop('The percentages specified do not sum to 1.')
+  if(length(pcts) != length(set.names)) stop('The set.names and pcts are not the same length.')
+  
+  #y = df[,y]
+  k = length(pcts)
+  n = nrow(df)
+  
+  # Calculate the cummulative number of observations for each specified bucket
+  cuts <- sapply(cumsum(pcts) * n, floor)
+  set.seed(seed); sampled.rows <- sample(n, n); 
+  data.sets <- list()
+  for (i in 1:k){
+    if(i == 1){
+        start.cut <- 1
+    } else {
+        start.cut <- cuts[i-1] +1
+    }
+    
+    selected.rows <- sampled.rows[start.cut: cuts[i]]
+    l <- list(df[selected.rows,])
+    names(l) <- set.names[i]
+    data.sets <- c(data.sets, l)
+                }
+  return(data.sets)
+}
