@@ -23,7 +23,6 @@ split.data <- function(  df
   if(sum(pcts) != 1) stop('The percentages specified do not sum to 1.')
   if(length(pcts) != length(set.names)) stop('The set.names and pcts are not the same length.')
   
-  #y = df[,y]
   k = length(pcts)
   n = nrow(df)
   
@@ -43,5 +42,15 @@ split.data <- function(  df
     names(l) <- set.names[i]
     data.sets <- c(data.sets, l)
                 }
+  # Verify the proper number of rows are returned
+  rows <- rep(NA, length(data.sets))
+  q = 1
+  for (i in t){
+    rows[q] <- nrow(i)
+    q <- q+1
+  }
+  
+  if(sum(rows) != nrow(df)) warning(paste0('The number of rows in the input data set was ', nrow(df), ' but the number of rows in the sampled data sets is ', sum(rows)))
+  
   return(data.sets)
 }

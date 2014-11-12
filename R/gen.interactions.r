@@ -10,8 +10,8 @@
 #' df <- cbind(df, rep('A', nrow(df)))
 #' df[1,1] <- NA
 #' gen.interaction(df)
-#' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term=T)
-#' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term=F)
+#' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term=TRUE)
+#' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term=FALSE)
 #' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term='only')
 #' gen.interaction(df, interaction.vars = c("X1", "X2"), return.all = TRUE)
 
