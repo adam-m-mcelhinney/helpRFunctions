@@ -11,7 +11,7 @@
 #' #cor(df) # This will return an error because the last column is not numeric.
 #' varList <- list.df.var.types(df)
 #' cor(df[,varList$numeric]) # No longer returns an error. Ignores the 
-non-numeric columns.
+#' non-numeric columns.
 
 list.df.var.types <- function(df) {
   if(!is.data.frame(df)) stop('Must provide data frame')

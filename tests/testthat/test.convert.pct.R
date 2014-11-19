@@ -1,5 +1,5 @@
 # Add the library statement here. For some reason this isnt working currently.
-source('C:/Local_Files/helpRFunctions/R/convert.pct.r')
+
 
 
 test_that('bucketize.cont returns the correct amount of values.', { 

@@ -24,7 +24,8 @@
 #'rmv.highly.correlated(df)
 
 
-rmv.highly.correlated <- function(df, verbose = FALSE, cutoff = .75, use = "pairwise.complete.obs", print.removed.cols = TRUE) {
+rmv.highly.correlated <- function(df, verbose = FALSE, cutoff = .75
+, use = "pairwise.complete.obs", print.removed.cols = TRUE) {
     if(!is.data.frame(df)) stop('Must provide data frame')
     varList <- list.df.var.types(df)
     # TODO: Ensure all the possible data types that cor function accepts are here
@@ -33,14 +34,16 @@ rmv.highly.correlated <- function(df, verbose = FALSE, cutoff = .75, use = "pair
 		stop("Data frame contains no numeric variables.")
     numeric.df <- df[,varList$numeric] # TODO: Fix this for the case of integers and doubles
     cor.matrix <- cor(numeric.df, use = use)
-    highlyCorDescr <- findCorrelation(cor.matrix, cutoff = cutoff, verbose = verbose)
+    highlyCorDescr <- findCorrelation(cor.matrix, cutoff = cutoff
+	, verbose = verbose)
     cols.to.remove <- names(numeric.df[,highlyCorDescr]) # This is broke
     
     if (length(cols.to.remove) == 0){
         if(print.removed.cols == TRUE) warning('No columns removed')
         return(df)  
     } else {
-            if(print.removed.cols == TRUE) warning(paste0('Columns removed: ', cols.to.remove))
+            if(print.removed.cols == TRUE) warning(paste0('Columns removed: '
+										, cols.to.remove))
             new.df <- df[, -which(names(df) %in% cols.to.remove)]
             return (new.df)
     }
