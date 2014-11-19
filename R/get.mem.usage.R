@@ -1,7 +1,12 @@
 #' Displays the memory usage for all the objects in memory for R.
 #' 
-#' @param sort Optional, defaults to name. If you select 'name', then it returns the objects in alphabetical order. If you select 'size', it returns the objects in descending order of size. 
-#' @param min.display.value Optional, defaults to NA. This parameter represents the smallest object that you want to display in your result set. For example, if you have hundreds of objects, but many of them are very small and inconsequential, you may want to select to min.display.value such that those objects are not shown.
+#' @param sort Optional, defaults to name. If you select 'name', then it returns
+#' the objects in alphabetical order. If you select 'size', it returns the objects in descending order of size. 
+#' @param min.display.value Optional, defaults to NA. This parameter represents 
+#' the smallest object that you want to display in your result set. For example,
+#' if you have hundreds of objects, but many of them are very small and 
+#' inconsequential, you may want to select to min.display.value such that 
+#' those objects are not shown.
 #' @param limit Optional. Limit the resulting output to a specified size.
 #' @return A vector containing the objects and their associated sizes.
 #' @examples 

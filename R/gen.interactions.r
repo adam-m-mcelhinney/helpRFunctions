@@ -1,10 +1,16 @@
 #' Generates interaction or quadratic term variables for the specified columns
 #' 
 #' @param df The incoming data frame
-#' @param interaction.vars Optional. Defaults to the names of the data frame columns. The names of the variables for which to generate the interactions.
-#' @param return.all Optional. Defaults to FALSE. If true, the functon returns all of the columns in the data frame, including the interactions. If false, the function only returns the interaction columns.
-#' @param square.term Optional. Defaults to TRUE. If true, the function will return both interaction terms and square terms. If false, only interaction terms will be returned. If 'only', only square terms will be returned.
-#' @return A new data frame with either all of the columns, or just the new interaction columns (depending on vale of return.all parameter).
+#' @param interaction.vars Optional. Defaults to the names of the data frame 
+#' columns. The names of the variables for which to generate the interactions.
+#' @param return.all Optional. Defaults to FALSE. If true, the functon returns 
+#' all of the columns in the data frame, including the interactions. If false, 
+#' the function only returns the interaction columns.
+#' @param square.term Optional. Defaults to TRUE. If true, the function will 
+#' return both interaction terms and square terms. If false, only interaction 
+#' terms will be returned. If 'only', only square terms will be returned.
+#' @return A new data frame with either all of the columns, or just the new 
+#' interaction columns (depending on vale of return.all parameter).
 #' @examples 
 #' df <- data.frame(matrix(rnorm(100), nrow = 10))
 #' df <- cbind(df, rep('A', nrow(df)))
@@ -15,7 +21,8 @@
 #' gen.interaction(df, interaction.vars = c("X1", "X2"), square.term='only')
 #' gen.interaction(df, interaction.vars = c("X1", "X2"), return.all = TRUE)
 
-gen.interaction <- function(df, interaction.vars = names(df), return.all = FALSE, square.term=c(TRUE, FALSE,'only')) {
+gen.interaction <- function(df, interaction.vars = names(df)
+, return.all = FALSE, square.term=c(TRUE, FALSE,'only')) {
   
   orig <- df # Save the original data frame somewhere
   df <- df[,interaction.vars] # Only get the columns we are interested in

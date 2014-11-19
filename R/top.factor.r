@@ -1,8 +1,10 @@
 #' Return the top X factors and for the rest, group them together.
 #' 
 #' @param df The incoming data frame
-#' @param factor.vars Optional. Defaults to all columns in the df with names. The factor variables for which you want to group together.
-#' @param max.factors Optional. Defaults to 10. The maximum number of factors you want to have for a given variable.
+#' @param factor.vars Optional. Defaults to all columns in the df with names. 
+#' The factor variables for which you want to group together.
+#' @param max.factors Optional. Defaults to 10. The maximum number of 
+#' factors you want to have for a given variable.
 #' @return A data frame with the factor.vars columns grouped by the max factors
 #' @examples
 #'df <- data.frame(cbind(sample(letters, 100, replace = TRUE))

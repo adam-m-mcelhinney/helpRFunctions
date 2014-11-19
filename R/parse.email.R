@@ -1,4 +1,5 @@
-#' Splits an email address, or vector of email address, of the form local-part@@domain, into the local and domain pieces.
+#' Splits an email address, or vector of email address, of the form 
+#' local-part@@domain, into the local and domain pieces.
 #' 
 #' @param emails An email address, or vector of email addresses.
 #' @return A list containing the elements local and domain.

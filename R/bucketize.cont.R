@@ -2,7 +2,8 @@
 #' 
 #' 
 #' @param vals A vector of numeric values that you which to place into buckets.
-#' @param bucket.size Optional. Defaults to 1. The size bucket you wish to create.
+#' @param bucket.size Optional. Defaults to 1. The size bucket you wish to 
+#' create.
 #' @return A vector containing the bucketized values.
 #' @examples 
 #' 

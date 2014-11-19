@@ -1,10 +1,14 @@
 #' Divides the data into any specified number of buckets with specified names. 
 
 #' @param df The data frame to split
-#' @param pcts Optional. The percentage of observations to put into each bucket. Extra observations due to rounding are placed in the last bucket.
-#' @param set.names Optional. What to name the resulting data sets. This must be the same length as the pcts vector.
-#' @param seed Optional. Define a seed to use for sampling. Defaults to NULL which is just the normal random number generator in R. 
-#' @return A list containing data frames named according to the set.names argument.
+#' @param pcts Optional. The percentage of observations to put into each bucket.
+#' Extra observations due to rounding are placed in the last bucket.
+#' @param set.names Optional. What to name the resulting data sets. This must
+#' be the same length as the pcts vector.
+#' @param seed Optional. Define a seed to use for sampling. Defaults to NULL 
+#' which is just the normal random number generator in R. 
+#' @return A list containing data frames named according to the set.names 
+#' argument.
 #' @examples 
 #' df <- data.frame(matrix(rnorm(110), nrow = 11))
 #' t <- split.data(df)
