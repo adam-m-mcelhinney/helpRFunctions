@@ -9,6 +9,7 @@ This package may be installed using [devtools](http://cran.r-project.org/web/pac
 ```
 install.package('devtools') # Only needed if you dont have this installed.
 library(devtools)
-install_github('helpRFunctions', username = 'adam-m-mcelhinney')```
+install_github('adam-m-mcelhinney/helpRFunctions')
+```
 
 
