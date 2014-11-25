@@ -9,13 +9,17 @@ rmv.highly.correlated(df, verbose = FALSE, cutoff = 0.75,
 \arguments{
 \item{df}{The incoming data frame}
 
-\item{verbose}{Optional. Defaults to FALSE. Is the verbose argument for the \href{http://cran.r-project.org/web/packages/caret/caret.pdf}{findCorrelation} function in caret.}
+\item{verbose}{Optional. Defaults to FALSE. Is the verbose argument for the
+\href{http://cran.r-project.org/web/packages/caret/caret.pdf}{findCorrelation} function in caret.}
 
-\item{cutoff}{Optional. Defaults to .75. Is the cutoff argument for the \href{http://cran.r-project.org/web/packages/caret/caret.pdf}{findCorrelation} function in caret.}
+\item{cutoff}{Optional. Defaults to .75. Is the cutoff argument for the
+\href{http://cran.r-project.org/web/packages/caret/caret.pdf}{findCorrelation} function in caret.}
 
-\item{use}{Optional. Defaults to pairwise.complete.obs. Is the use argument for the cor function.}
+\item{use}{Optional. Defaults to pairwise.complete.obs. Is the use argument
+for the cor function.}
 
-\item{print.removed.cols}{Optional. Defaults to TRUE. If TRUE, prints the names of the columns removed.}
+\item{print.removed.cols}{Optional. Defaults to TRUE. If TRUE, prints the
+names of the columns removed.}
 }
 \value{
 A new data frame with the highly correlated variables removed.

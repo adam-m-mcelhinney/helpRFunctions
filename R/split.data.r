@@ -14,7 +14,11 @@
 #' t <- split.data(df)
 #' training <- t$training
 #' testing <- t$testing
-#' 
+#' # A big example
+#' \dontrun{
+#' df <- data.frame(matrix(rnorm(110*1000000), nrow = 11*1000000))
+#' system.time(split.data(df))
+#' }
 
 
 
@@ -49,7 +53,7 @@ split.data <- function(  df
   # Verify the proper number of rows are returned
   rows <- rep(NA, length(data.sets))
   q = 1
-  for (i in t){
+  for (i in data.sets){
     rows[q] <- nrow(i)
     q <- q+1
   }

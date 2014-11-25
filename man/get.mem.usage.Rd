@@ -6,9 +6,14 @@
 get.mem.usage(sort = "name", min.display.value = NA, limit = NA)
 }
 \arguments{
-\item{sort}{Optional, defaults to name. If you select 'name', then it returns the objects in alphabetical order. If you select 'size', it returns the objects in descending order of size.}
+\item{sort}{Optional, defaults to name. If you select 'name', then it returns
+the objects in alphabetical order. If you select 'size', it returns the objects in descending order of size.}
 
-\item{min.display.value}{Optional, defaults to NA. This parameter represents the smallest object that you want to display in your result set. For example, if you have hundreds of objects, but many of them are very small and inconsequential, you may want to select to min.display.value such that those objects are not shown.}
+\item{min.display.value}{Optional, defaults to NA. This parameter represents
+the smallest object that you want to display in your result set. For example,
+if you have hundreds of objects, but many of them are very small and
+inconsequential, you may want to select to min.display.value such that
+those objects are not shown.}
 
 \item{limit}{Optional. Limit the resulting output to a specified size.}
 }

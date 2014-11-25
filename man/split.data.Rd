@@ -9,14 +9,18 @@
 \arguments{
 \item{df}{The data frame to split}
 
-\item{pcts}{Optional. The percentage of observations to put into each bucket. Extra observations due to rounding are placed in the last bucket.}
+\item{pcts}{Optional. The percentage of observations to put into each bucket.
+Extra observations due to rounding are placed in the last bucket.}
 
-\item{set.names}{Optional. What to name the resulting data sets. This must be the same length as the pcts vector.}
+\item{set.names}{Optional. What to name the resulting data sets. This must
+be the same length as the pcts vector.}
 
-\item{seed}{Optional. Define a seed to use for sampling. Defaults to NULL which is just the normal random number generator in R.}
+\item{seed}{Optional. Define a seed to use for sampling. Defaults to NULL
+which is just the normal random number generator in R.}
 }
 \value{
-A list containing data frames named according to the set.names argument.
+A list containing data frames named according to the set.names
+argument.
 }
 \description{
 Divides the data into any specified number of buckets with specified names.
@@ -26,5 +30,10 @@ df <- data.frame(matrix(rnorm(110), nrow = 11))
 t <- split.data(df)
 training <- t$training
 testing <- t$testing
+# A big example
+\dontrun{
+df <- data.frame(matrix(rnorm(110*1000000), nrow = 11*1000000))
+system.time(split.data(df))
+}
 }
 

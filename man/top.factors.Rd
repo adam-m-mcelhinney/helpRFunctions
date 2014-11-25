@@ -8,9 +8,11 @@ top.factors(df, factor.vars = names(df), max.factors = 10)
 \arguments{
 \item{df}{The incoming data frame}
 
-\item{factor.vars}{Optional. Defaults to all columns in the df with names. The factor variables for which you want to group together.}
+\item{factor.vars}{Optional. Defaults to all columns in the df with names.
+The factor variables for which you want to group together.}
 
-\item{max.factors}{Optional. Defaults to 10. The maximum number of factors you want to have for a given variable.}
+\item{max.factors}{Optional. Defaults to 10. The maximum number of
+factors you want to have for a given variable.}
 }
 \value{
 A data frame with the factor.vars columns grouped by the max factors

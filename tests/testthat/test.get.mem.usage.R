@@ -12,9 +12,9 @@ test_that('Ensure that get.mem.usage catches invalid inputs.', {
 ) 
 
 test_that('Ensure that get.mem.usage returns proper results.', {
-  g = get.mem.usage(limit = 5)
+  g <- get.mem.usage(limit = 5)
   expect_less_than(length(g), 5 + 1)
-  h = get.mem.usage(min.display.value = 10)
+  h <- get.mem.usage(min.display.value = 10)
   expect_more_than(max(h), 10) 
 }
 ) 

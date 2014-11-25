@@ -1,4 +1,7 @@
 library(testthat)
-library(helpRFunctions)
+library(devtools)
+#install_github('adam-m-mcelhinney/helpRFunctions')
+#library(helpRFunctions)
 
-test_check("helpRFunctions")
+
+test_dir("/home/adam/git/helpRFunctions/tests/testthat", reporter = 'summary')

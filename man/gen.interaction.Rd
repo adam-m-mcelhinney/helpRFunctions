@@ -9,14 +9,20 @@ gen.interaction(df, interaction.vars = names(df), return.all = FALSE,
 \arguments{
 \item{df}{The incoming data frame}
 
-\item{interaction.vars}{Optional. Defaults to the names of the data frame columns. The names of the variables for which to generate the interactions.}
+\item{interaction.vars}{Optional. Defaults to the names of the data frame
+columns. The names of the variables for which to generate the interactions.}
 
-\item{return.all}{Optional. Defaults to FALSE. If true, the functon returns all of the columns in the data frame, including the interactions. If false, the function only returns the interaction columns.}
+\item{return.all}{Optional. Defaults to FALSE. If true, the functon returns
+all of the columns in the data frame, including the interactions. If false,
+the function only returns the interaction columns.}
 
-\item{square.term}{Optional. Defaults to TRUE. If true, the function will return both interaction terms and square terms. If false, only interaction terms will be returned. If 'only', only square terms will be returned.}
+\item{square.term}{Optional. Defaults to TRUE. If true, the function will
+return both interaction terms and square terms. If false, only interaction
+terms will be returned. If 'only', only square terms will be returned.}
 }
 \value{
-A new data frame with either all of the columns, or just the new interaction columns (depending on vale of return.all parameter).
+A new data frame with either all of the columns, or just the new
+interaction columns (depending on vale of return.all parameter).
 }
 \description{
 Generates interaction or quadratic term variables for the specified columns

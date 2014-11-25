@@ -8,7 +8,8 @@ bucketize.cont(vals, bucket.size = 1)
 \arguments{
 \item{vals}{A vector of numeric values that you which to place into buckets.}
 
-\item{bucket.size}{Optional. Defaults to 1. The size bucket you wish to create.}
+\item{bucket.size}{Optional. Defaults to 1. The size bucket you wish to
+create.}
 }
 \value{
 A vector containing the bucketized values.

@@ -1,6 +1,6 @@
 # Add the library statement here. For some reason this isnt working currently.
 
-
+context('Test bucketize.cont')
 
 test_that('bucketize.cont returns the correct amount of values.', { 
     # TODO: Figure out how to hide this warning that is created
