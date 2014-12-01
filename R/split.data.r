@@ -34,31 +34,16 @@ split.data <- function(  df
   k = length(pcts)
   n = nrow(df)
   
-  # Calculate the cummulative number of observations for each specified bucket
-  cuts <- sapply(cumsum(pcts) * n, floor)
-  set.seed(seed); sampled.rows <- sample(n, n); 
-  data.sets <- list()
-  for (i in 1:k){
-    if(i == 1){
-        start.cut <- 1
-    } else {
-        start.cut <- cuts[i-1] +1
-    }
-    
-    selected.rows <- sampled.rows[start.cut: cuts[i]]
-    l <- list(df[selected.rows,])
-    names(l) <- set.names[i]
-    data.sets <- c(data.sets, l)
-                }
-  # Verify the proper number of rows are returned
-  rows <- rep(NA, length(data.sets))
-  q = 1
-  for (i in data.sets){
-    rows[q] <- nrow(i)
-    q <- q+1
+  # Calculate the number of observations for each specified bucket
+  qty <- sapply(pcts * n, floor)
+  # Add any letover observations to the last bucket
+  if (sum(qty) != n) qty[k] <- qty[k] + (n - sum(qty))
+  
+  # Assign the groups
+  ind <- rep(set.names, qty)
+  set.seed(seed); sampled.sets<- sample(ind);
+  
+  df['sampled.group'] <- sampled.sets
+                  
+  return(df)
   }
-  
-  if(sum(rows) != nrow(df)) warning(paste0('The number of rows in the input data set was ', nrow(df), ' but the number of rows in the sampled data sets is ', sum(rows)))
-  
-  return(data.sets)
-}
