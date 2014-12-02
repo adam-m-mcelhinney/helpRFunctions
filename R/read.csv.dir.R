@@ -2,7 +2,7 @@
 #' 
 #' 
 #' @param ... Accepts all of the arguments for read.csv and list.files.
-#' @return All of the csv files imported 
+#' @return All of the csv files as data frames, just like read.csv 
 #' @examples 
 #' \dontrun{
 #' data1 <- data.frame(1:10)
@@ -13,7 +13,7 @@
 #' }
 
 read.csv.dir <- function(...){
-  # TODO: Expand this program to handle any times of reads, as well as source()/
+  # TODO: Expand this program to handle any types of reads (IE tables, etc), as well as source()
   # TODO: Add some type of logging and basic validation of the data
   files <- list.files(..., pattern = "*.csv", full.names = TRUE)
   for (i in files){
