@@ -10,6 +10,7 @@ This package may be installed using [devtools](http://cran.r-project.org/web/pac
 install.packages('devtools') # Only needed if you dont have this installed.
 library(devtools)
 install_github('adam-m-mcelhinney/helpRFunctions')
+library(helpRFunctions)
 ```
 
 
