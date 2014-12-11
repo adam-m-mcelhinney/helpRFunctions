@@ -1,5 +1,5 @@
 # Add the library statement here. For some reason this isnt working currently.
-#library(helpRFunctions)
+library(helpRFunctions)
 
 context('Test bucketize.cont')
 
