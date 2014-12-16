@@ -12,5 +12,12 @@ library(devtools)
 install_github('adam-m-mcelhinney/helpRFunctions')
 library(helpRFunctions)
 ```
-
-
+## Guiding Principles
+These principles are an evolving document designed to provide guiding principles for this package. 
+1. Clean code is more important than optimized code. This package is not intended to be a bleeding-edge analysis tool for giat data sets. 
+2. Provide the user with common sense defaults, but let them configure as much as possible if they chose. 
+3. Roxygen is a great tool. Let's use it.
+4. Unit test as much as possible.
+5. Ensure all assumptions are explicitly checked. If these assumptions fail, then provide a very clear message to the user. 
+6. Longer but more readable names are preferrable (within reason). Most of us are using an IDE or text editor with autocomplete, so longer variable names shouldn't require much more typing.
+7. Jibberish names are explicitly forbidden.
