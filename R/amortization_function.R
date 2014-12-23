@@ -11,34 +11,23 @@ library(nleqslv)
 #'@param num_installment.  Total number of installments.
 #'@example
 #'
-#'amortize (1500,0.4,"2014/01/05","2014/06/30",c("2014/01/05","2014/01/31","2014/02/28","2014/03/31","2014/04/30","2014/05/31","2014/06/30"),6)
-
-
-
-principal=1500
-interest_rate=1.4
-funding_date="2014/01/05"
-last_due_date="2014/06/30"
-
-installment_due_dates=c ("2014/01/05","2014/01/31","2014/02/28","2014/03/31","2014/04/30","2014/05/31","2014/06/30")
-num_installment=6
-
+#'amortize (1000,1.4,"2014/01/05","2014/06/30",c("2014/01/05","2014/01/31","2014/02/28","2014/03/31","2014/04/30","2014/05/31","2014/06/30"))
 
 amortize <- function(principal
                      , interest_rate
                      , funding_date
                      , last_due_date
-                     , installment_due_dates
-                     , num_installment) {
+                     , installment_due_dates) {
   
-  #installment due dates must be a vector of all due dates of the installment  loan.
-  if(!is.vector(installment_due_dates))stop("Installment_due_dates is not a vector")
+  
   # total number of days in the installment loan   
   loan_length<-as.Date(as.character(last_due_date), format="%Y/%m/%d")-as.Date(as.character(funding_date), format="%Y/%m/%d")
   
   # daily interest rate
   daily_i= interest_rate/365 
   
+  # number of installments
+  num_installment=length(installment_due_dates)-1
   
   # duration of each installment
   num_days=NULL
@@ -61,13 +50,18 @@ amortize <- function(principal
   
   solver_for_payment=function(payment) {
     
+    interest_payment=vector(mode='numeric',length=num_installment)
+    principal_payment=vector(mode='numeric',length=num_installment)
+    paid_principal=vector(mode='numeric',length=num_installment)
+    paid_interest=vector(mode='numeric',length=num_installment)
+    remaining_principal=vector(mode='numeric',length=num_installment)
+
     interest_payment=NULL
     principal_payment=NULL
     paid_principal=NULL
     paid_interest=NULL
     remaining_principal=NULL
-    remaining_balance=NULL
-    
+
     
     #the first interest payment is calculated seperately as a starting point for the remaining amortization schedule
     
@@ -76,7 +70,7 @@ amortize <- function(principal
     paid_principal[1]=principal_payment[1]
     paid_interest[1]=interest_payment[1]
     remaining_principal[1]=principal-paid_principal[1]
-    remaining_balance[1]=payment*(num_installment-1)
+
     
     for(i in 2:num_installment){
       
@@ -95,9 +89,6 @@ amortize <- function(principal
       
       #remaining_principal
       remaining_principal[i]= principal-paid_principal[i]
-      
-      #remaining_balance included unpaid principal and interest
-      #remaining_balance[i]=total_payment-paid_principal[i]-paid_interest[i]
     }
     
     remaining_principal[i]
@@ -126,6 +117,16 @@ amortize <- function(principal
   
   #the first interest payment is calculated seperately as a starting point for the remaining amortization schedule
   
+  # define the length before the loop to improve efficiency
+  
+  interest_payment=vector(mode='numeric',length=num_installment)
+  principal_payment=vector(mode='numeric',length=num_installment)
+  paid_principal=vector(mode='numeric',length=num_installment)
+  paid_interest=vector(mode='numeric',length=num_installment)
+  remaining_principal=vector(mode='numeric',length=num_installment)
+  remaining_balance=vector(mode='numeric',length=num_installment)
+  
+  #the first interest payment is calculated seperately as a starting point for the remaining amortization schedule
   interest_payment[1]=principal*interest_rate_per_inst[1]
   principal_payment[1]=payment-interest_payment[1]
   paid_principal[1]=principal_payment[1]
@@ -171,3 +172,4 @@ amortize <- function(principal
   
   output
 }
+
