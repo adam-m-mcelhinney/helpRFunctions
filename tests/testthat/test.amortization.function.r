@@ -14,3 +14,4 @@ test_that('amortization.function returns the correct payment amount.', {
                , c(276.1336, 431.9290))
 }
 ) 
+
