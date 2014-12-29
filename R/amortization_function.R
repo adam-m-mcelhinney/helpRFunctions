@@ -1,6 +1,7 @@
 library(roxygen2)
 library(nleqslv)
 
+
 #'Create the amortization schedule with arbitrary installment due dates.
 #'
 #'@param principal. The initial loan amount.
